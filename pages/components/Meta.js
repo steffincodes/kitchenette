@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { FAVICON, APP_NAME } from "../variables/global";
+import { FAVICON, APP_NAME } from "../../lib/global";
 export default function Meta() {
   return (
     <Head>
