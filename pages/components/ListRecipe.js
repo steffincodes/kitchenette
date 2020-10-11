@@ -4,8 +4,7 @@ export default function ListRecipe() {
   for (let recipe of listOfRecipes) {
     recipeList.push(
       <div className="flex flex-col justify-center items-center max-w-sm mx-auto">
-        <div className="bg-white  shadow-lg rounded-lg overflow-hidden m-3 p-10">
-          {getCategoryBadge(recipe.category)}
+        <div className={`${recipe.meat ? "bg-red-200":"bg-green-200"}  shadow-lg rounded-lg overflow-hidden m-3 p-10`}>
           <div className="text-2xl font-bold py-2">{recipe.name}</div>
           <ol className="list-decimal pb-0 m-4">
             {getOverviewList(recipe.overview)}
@@ -39,43 +38,6 @@ function getOverviewList(listOfOverview) {
   }
   return overviewList;
 }
-function getCategoryBadge(listOfCategory) {
-  const categoryList = [];
-  for (let category of listOfCategory) {
-    switch (category) {
-      case "veg":
-        categoryList.push(
-          <div className="header-content inline-flex ">
-            <div className="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-green-100">
-              <div className="h-2 w-2 rounded-full m-1 bg-green-500 "></div>
-            </div>
-            <div className="category-title flex-1 text-sm"> {category}</div>
-          </div>
-        );
-        break;
-      case "non-veg":
-        categoryList.push(
-          <div className="header-content inline-flex ">
-            <div className="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-red-100">
-              <div className="h-2 w-2 rounded-full m-1 bg-red-500 "></div>
-            </div>
-            <div className="category-title flex-1 text-sm"> meat</div>
-          </div>
-        );
-        break;
-      default:
-        categoryList.push(
-          <div className="header-content inline-flex ">
-            <div className="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-purple-100">
-              <div className="h-2 w-2 rounded-full m-1 bg-purple-500 "></div>
-            </div>
-            <div className="category-title flex-1 text-sm"> {category}</div>
-          </div>
-        );
-    }
-  }
-  return categoryList;
-}
 function getListOfIconHtml(listOfIcons) {
   const iconList = [];
   for (let icon of listOfIcons) {
@@ -96,7 +58,7 @@ const listOfRecipes = [
   {
     name: "Garlic Chutney",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["garlic", "onion", "chili"],
     overview: [
       "Soak tamarind and extract water",
@@ -107,7 +69,7 @@ const listOfRecipes = [
   {
     name: "Tomato Chutney",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["tomato", "onion", "chili"],
     overview: [
       "Sautee Mustard seeds, Curry Leaves, Tomato, Onion and Chili in Oil",
@@ -117,7 +79,7 @@ const listOfRecipes = [
   {
     name: "Fried Rice",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["rice", "vegetables"],
     overview: [
       "Soak rice and drain",
@@ -129,7 +91,7 @@ const listOfRecipes = [
   {
     name: "Schezwan Fried Rice",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["rice", "sauce", "vegetables"],
     overview: [
       "Soak rice and drain",
@@ -141,7 +103,7 @@ const listOfRecipes = [
   {
     name: "Fried Noodles",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["noodles", "vegetables"],
     overview: [
       "Boil water with salt and oil",
@@ -153,7 +115,7 @@ const listOfRecipes = [
   {
     name: "Schezwan Fried Noodles",
     time: "30m",
-    category: ["veg"],
+    meat: false,
     icon: ["noodles", "sauce", "vegetables"],
     overview: [
       "Boil water with salt and oil",
@@ -165,7 +127,7 @@ const listOfRecipes = [
   {
     name: "Mutton Biriyani",
     time: "60m",
-    category: ["non-veg"],
+    meat: true,
     icon: ["rice", "meat"],
     overview: [
       "Marinate meat",
@@ -177,7 +139,7 @@ const listOfRecipes = [
   {
     name: "Chicken Biriyani",
     time: "50m",
-    category: ["non-veg"],
+    meat: true,
     icon: ["rice", "chicken"],
     overview: [
       "Marinate meat",
@@ -189,7 +151,7 @@ const listOfRecipes = [
   {
     name: "Prawn Biriyani",
     time: "50m",
-    category: ["non-veg"],
+    meat: true,
     icon: ["rice", "prawn"],
     overview: [
       "Marinate meat",

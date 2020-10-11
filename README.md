@@ -7,9 +7,17 @@ A minimal web app to add/edit/view recipies with custom search/sort options.
 ## Features
 
 - [x] Minimal Display
+- [ ] Multiple Stop Watch
 - [ ] REST backend
 - [ ] CRUD operation
 - [ ] Sorting
 - [ ] Filter
 - [ ] Authentication
 - [ ] User based customization
+
+> To locall serve, download the git folder and run th efollowing commands
+```js
+npm i
+npm run dev
+```
+Open link http://localhost:3000 once it has been siccessfully started.
