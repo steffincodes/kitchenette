@@ -15,7 +15,7 @@ A minimal web app to add/edit/view recipies with custom search/sort options.
 - [ ] Authentication
 - [ ] User based customization
 
-> To locall serve, download the git folder and run th efollowing commands
+> To locall serve, download the git folder and run the following commands
 ```js
 npm i
 npm run dev
